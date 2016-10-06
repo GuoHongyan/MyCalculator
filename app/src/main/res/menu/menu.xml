@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="help"
+        android:id="@+id/help"/>
+    <item
+        android:id="@+id/exit"
+        android:title="exit"/>
+    <item
+        android:id="@+id/unitConversion"
+        android:title="Unit conversion "/>
+    <item
+        android:id="@+id/stopwatch"
+        android:title="stopwatch"/>
+    <item
+        android:id="@+id/calendar"
+        android:title="calendar"/>
+</menu>

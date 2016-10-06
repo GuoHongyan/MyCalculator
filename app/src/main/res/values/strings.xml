@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyCalculator</string>
+    <string name="title_activity_sys_application">SysApplication</string>
+    <string name="title_activity_unit_conversion">UnitConversionActivity</string>
+    <string name="weather_forecast">预报</string>
+    <string name="weather_live">实时</string>
+    <string name="report_time">发布时间</string>
+
+    <string name="title_activity_weather">WeatherActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_stop_watch">StopWatchActivity</string>
+    <string name="title_activity_calendar">CalendarActivity</string>
+</resources>
