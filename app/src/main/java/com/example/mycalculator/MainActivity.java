@@ -165,6 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 myString = tvResult.getText().toString();
                 try {
                     tvResult.setText(myString.substring(0, myString.length() - 1));
+                    editText.setText(editText.getText().toString().substring(0, myString.length() - 1));
                 } catch (Exception e) {
                     tvResult.setText("");
                 }
@@ -172,12 +173,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnCE:
                 tvResult.setText(null);
                 editText.setText(null);
-//                num1=0;num2=0;op=0;
                 break;
             case R.id.btnC:
                 tvResult.setText(null);
                 editText.setText(null);
-//                num1=0;num2=0;op=0;
 
                 break;
             case R.id.btnPoint:
@@ -336,123 +335,130 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btnAdd:
+
                 myString=tvResult.getText().toString();
-                if(isClickOpr==false){
-                    num1=Double.valueOf(myString);
-                    num2=0;
-                    op=1;
-                    editText.setText(String.valueOf(num1)+"+");
-                }
-
-                tvResult.setText(null);
-
-                if(isClickOpr==true){
-                    num2=Double.valueOf(myString);
-                    if(calculate(num1,num2,op)==000){
-                        editText.setText(ERROR);
-                    }
-                    else {
-                        editText.setText(String.valueOf(calculate(num1, num2, op))+"+");
-                        num1 = calculate(num1, num2, op);
-                        tvResult.setText(null);
+                try {
+                    if (isClickOpr == false) {
+                        num1 = Double.valueOf(myString);
+                        num2 = 0;
                         op = 1;
+                        editText.setText(String.valueOf(num1) + "+");
                     }
-                }
-                isClickOpr=true;
+
+                    tvResult.setText(null);
+                    if (isClickOpr == true) {
+                        num2 = Double.valueOf(myString);
+                        if (calculate(num1, num2, op) == 000) {
+                            editText.setText(ERROR);
+                        } else {
+                            editText.setText(String.valueOf(calculate(num1, num2, op)) + "+");
+                            num1 = calculate(num1, num2, op);
+                            tvResult.setText(null);
+                            op = 1;
+                        }
+                    }
+                    isClickOpr = true;
+                }catch(Exception e){}
                 break;
+
             case R.id.btnSub:
                 myString=tvResult.getText().toString();
-                if(isClickOpr==false){
-                    num1=Double.valueOf(myString);
-                    num2=0;
-                    op=2;
-                    editText.setText(String.valueOf(num1)+"-");
-                }
-                tvResult.setText(null);
+                try {
+                    if (isClickOpr == false) {
+                        num1 = Double.valueOf(myString);
+                        num2 = 0;
+                        op = 2;
+                        editText.setText(String.valueOf(num1) + "-");
+                    }
+                    tvResult.setText(null);
 
-                if(isClickOpr==true){
-                    num2=Double.valueOf(myString);
-                    if(calculate(num1,num2,op)==000){
-                        editText.setText(ERROR);
+                    if (isClickOpr == true) {
+                        num2 = Double.valueOf(myString);
+                        if (calculate(num1, num2, op) == 000) {
+                            editText.setText(ERROR);
+                        } else {
+                            editText.setText(String.valueOf(calculate(num1, num2, op)) + "-");
+                            num1 = calculate(num1, num2, op);
+                            tvResult.setText(null);
+                            op = 2;
+                        }
                     }
-                    else {
-                        editText.setText(String.valueOf(calculate(num1,num2,op))+"-");
-                        num1=calculate(num1,num2,op);
-                        tvResult.setText(null);
-                        op=2;
-                    }
-                }
-                isClickOpr=true;
+                    isClickOpr = true;
+                }catch(Exception e){}
                 break;
             case R.id.btnMul:
                 myString=tvResult.getText().toString();
-                if(isClickOpr==false){
-                    num1=Double.valueOf(myString);
-                    num2=0;
-                    op=3;
-                    editText.setText(String.valueOf(num1)+"x");
-                }
-                tvResult.setText(null);
-                if(isClickOpr==true){
-                    num2=Double.valueOf(myString);
-                    if(calculate(num1,num2,op)==000){
-                        editText.setText(ERROR);
+                try {
+                    if (isClickOpr == false) {
+                        num1 = Double.valueOf(myString);
+                        num2 = 0;
+                        op = 3;
+                        editText.setText(String.valueOf(num1) + "x");
                     }
-                    else {
-                        editText.setText(String.valueOf(calculate(num1,num2,op))+"x");
-                        num1=calculate(num1,num2,op);
-                        tvResult.setText(null);
-                        op=3;
-                    }
+                    tvResult.setText(null);
+                    if (isClickOpr == true) {
+                        num2 = Double.valueOf(myString);
+                        if (calculate(num1, num2, op) == 000) {
+                            editText.setText(ERROR);
+                        } else {
+                            editText.setText(String.valueOf(calculate(num1, num2, op)) + "x");
+                            num1 = calculate(num1, num2, op);
+                            tvResult.setText(null);
+                            op = 3;
+                        }
 
-                }
-                isClickOpr=true;
+                    }
+                    isClickOpr = true;
+                }catch(Exception e){}
                 break;
             case R.id.btnDiv:
                 myString=tvResult.getText().toString();
-                if(isClickOpr==false){
-                    num1=Double.valueOf(myString);
-                    op=4;
-                    editText.setText(String.valueOf(num1)+"/");
-                }
-                tvResult.setText(null);
-                if(isClickOpr==true){
-                    num2=Double.valueOf(myString);
-                    if(calculate(num1,num2,op)==000){
-                        editText.setText(ERROR);
-                    }
-                    else {
-                        editText.setText(String.valueOf(calculate(num1, num2, op))+"/");
-                        num1 = calculate(num1, num2, op);
-                        tvResult.setText(null);
+                try {
+                    if (isClickOpr == false) {
+                        num1 = Double.valueOf(myString);
                         op = 4;
+                        editText.setText(String.valueOf(num1) + "/");
                     }
-                }
-                isClickOpr=true;
+                    tvResult.setText(null);
+                    if (isClickOpr == true) {
+                        num2 = Double.valueOf(myString);
+                        if (calculate(num1, num2, op) == 000) {
+                            editText.setText(ERROR);
+                        } else {
+                            editText.setText(String.valueOf(calculate(num1, num2, op)) + "/");
+                            num1 = calculate(num1, num2, op);
+                            tvResult.setText(null);
+                            op = 4;
+                        }
+                    }
+                    isClickOpr = true;
+                }catch(Exception e){}
                 break;
             case R.id.btnMi:
                 String myStringMi=tvResult.getText().toString();
-                if(myStringMi.equals(""))
-                {
-                    return;
-                }
-                num1=Double.valueOf(myStringMi);
-                tvResult.setText(myStringMi+"^");
-                editText.setText(editText.getText()+"^");
-                op=5;
-                isClickEqu=false;
-                isNumber2=true;
+                try {
+                    if (myStringMi.equals("")) {
+                        return;
+                    }
+                    num1 = Double.valueOf(myStringMi);
+                    tvResult.setText(myStringMi + "^");
+                    editText.setText(editText.getText() + "^");
+                    op = 5;
+                    isClickEqu = false;
+                    isNumber2 = true;
+                }catch(Exception e){}
                 break;
             case R.id.btnLn:
                 String myStringLn=tvResult.getText().toString();
-                editText.setText(null);
-                if(myStringLn.equals(""))
-                {
-                    return;
-                }
+                try {
+                    editText.setText(null);
+                    if (myStringLn.equals("")) {
+                        return;
+                    }
 
-                num1=Double.valueOf(myStringLn);
-                tvResult.setText("ln"+myStringLn+"="+Math.log(num1));
+                    num1 = Double.valueOf(myStringLn);
+                    tvResult.setText("ln" + myStringLn + "=" + Math.log(num1));
+                }catch(Exception e){}
                 return;
             case R.id.btn2:
                 String myStringTwo=tvResult.getText().toString();
@@ -488,25 +494,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return;
             case R.id.btnSin:
                 String myStringSin=tvResult.getText().toString();
-                if(myStringSin.equals(""))
-                {
-                    return;
-                }
-                num1=Double.valueOf(myStringSin);
-                editText.setText(null);
-                tvResult.setText("Sin"+myStringSin+"="+Math.sin(num1));;
+                try{
+                    if(myStringSin.equals(""))
+                    {
+                        return;
+                    }
+                    num1=Double.valueOf(myStringSin);
+                    editText.setText(null);
+                    tvResult.setText("Sin"+myStringSin+"="+Math.sin(num1));
+                }catch(Exception e){}
                 return;
             case R.id.btnCos:
                 String myStringCos=tvResult.getText().toString();
-                num1=Double.valueOf(myStringCos);
-                editText.setText(null);
-                tvResult.setText("Cos"+myStringCos+"="+Math.cos(num1));
+                try {
+                    num1 = Double.valueOf(myStringCos);
+                    editText.setText(null);
+                    tvResult.setText("Cos" + myStringCos + "=" + Math.cos(num1));
+                }catch(Exception e){}
                 return;
             case R.id.btnTan:
                 String myStringTan=tvResult.getText().toString();
-                num1=Double.valueOf(myStringTan);
-                editText.setText(null);
-                tvResult.setText("Tan"+myStringTan+"="+Math.tan(num1));
+                try {
+                    num1 = Double.valueOf(myStringTan);
+                    editText.setText(null);
+                    tvResult.setText("Tan" + myStringTan + "=" + Math.tan(num1));
+                }catch(Exception e){}
                 return;
             case R.id.btnEqu:
                 editText.setText(editText.getText()+"=");

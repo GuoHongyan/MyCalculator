@@ -168,6 +168,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
+        android:text=""
         android:textColor="#FFFF33"
         />
     <Button
@@ -248,6 +249,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvResult"
         android:textColor="#00CCFF"
+        android:text=""
         android:layout_below="@+id/editText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
